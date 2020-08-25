@@ -13,25 +13,26 @@ TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++11
 
 INCLUDEPATH += \
-    /home/uisee/github/sqlite3
+    3rdparty/sqlite3/include    \
+    include
 
-LIBS += /home/uisee/github/sqlite3/libsqlite3.a
+LIBS += /home/neolix/github/qq2/3rdparty/sqlite3/lib/libsqlite3.a
 LIBS += -lpthread   \
         -ldl
 
 SOURCES += main.cpp\
-    sign_login.cpp \
-    tips_dialog.cpp \
-    sign_dialog.cpp \
-    qq_window.cpp
+    src/sign_login.cpp \
+    src/tips_dialog.cpp \
+    src/sign_dialog.cpp \
+    src/qq_window.cpp
 
-HEADERS += sign_login.h \
-    tips_dialog.h \
-    sign_dialog.h   \
-    /home/uisee/git/lslam/3rdparty/database/sqlite3/sqlite3.h \
-    qq_window.h
+HEADERS += include/sign_login.h \
+    include/tips_dialog.h \
+    include/sign_dialog.h   \
+    include/qq_window.h     \
+    3rdparty/sqlite3/include/sqlite3.h
 
-FORMS += sign_login.ui \
-    tips_dialog.ui \
-    sign_dialog.ui \
-    qq_window.ui
+FORMS += ui/sign_login.ui \
+    ui/tips_dialog.ui \
+    ui/sign_dialog.ui \
+    ui/qq_window.ui
